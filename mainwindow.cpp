@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    qDebug()<<"done";
 }
 
 MainWindow::~MainWindow()
@@ -22,5 +21,7 @@ void MainWindow::on_actionOpen_O_triggered()
     if(!fileName.isEmpty()){
         qDebug()<<"fileName is:"<<fileName;
     }
-    Video *video= new Video(fileName);
+    Audio *audio = new Audio(fileName);
+    audio->run();
+    //Video *video= new Video(fileName);
 }

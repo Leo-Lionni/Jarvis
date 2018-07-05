@@ -1,0 +1,15 @@
+filemanager
+system monitor
+cpu
+disk
+thread
+processor
+OS
+download
+search it
+catagray
+linux helper: udisk
+mcu
+controller
+apt installer
+system fixer

@@ -11,6 +11,7 @@ class Picture : public QThread
 {
 public:
     Picture();
+    void crypto(QString filename);
 };
 
 #endif // PICTURE_H

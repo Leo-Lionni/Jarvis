@@ -21,6 +21,7 @@ class Record : public QThread
 {
 public:
     Record();
+    QStringList getInputDevice();
 protected:
     void run();
 };

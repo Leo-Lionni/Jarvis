@@ -13,7 +13,15 @@ SOURCES += \
     video.cpp \
     record.cpp \
     waveform.cpp \
-    picture.cpp
+    picture.cpp \
+    ocr.cpp \
+    open.cpp \
+    file.cpp \
+    regexp.cpp \
+    highlighter.cpp \
+    svm.cpp \
+    voice.cpp \
+    codeparser.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -21,7 +29,15 @@ HEADERS += \
     video.h \
     record.h \
     waveform.h \
-    picture.h
+    picture.h \
+    ocr.h \
+    open.h \
+    file.h \
+    regexp.h \
+    highlighter.h \
+    svm.h \
+    voice.h \
+    codeparser.h
 
 FORMS += \
         mainwindow.ui
