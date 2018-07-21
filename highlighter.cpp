@@ -27,7 +27,7 @@ Highlighter::Highlighter(QTextDocument *parent)
     cppFormat.setFontWeight(QFont::Bold);
     QStringList ccppkeyPatterns;
     ccppkeyPatterns << "\\bcin\\b"<<"\\bcout\\b"   <<"\\basm\\b"       <<"\\bdo\\b"
-                                    <<"\\bif\\b"   <<"\\breturn\\b"<<"\\btypedef\\b"<<"\\bauto\\b"
+                    <<"\\bif\\b"   <<"\\breturn\\b"<<"\\btypedef\\b"<<"\\bauto\\b"
                     <<"\\bdouble\\b"<<"\\binline\\b"<<"\\bshort\\b"<<"\\btypeid\\b"
 //                       bool                       dynamic_cast                       int                       signed
 //                       typename                       break                       else                       long

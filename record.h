@@ -9,6 +9,8 @@ extern "C" {
 #include <libswresample/swresample.h>
 #include <libswscale/swscale.h>
 }
+#include <QAudio>
+#include <QAudioDeviceInfo>
 #include <QFile>
 #include <QString>
 #include <QDir>

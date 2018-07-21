@@ -13,3 +13,11 @@ mcu
 controller
 apt installer
 system fixer
+codeparser
+svm
+ocr
+pictures
+open
+voice speak out
+regexp
+file

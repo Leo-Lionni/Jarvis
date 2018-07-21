@@ -1,15 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-extern "C" {
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
-#include <libavdevice/avdevice.h>
-#include <libavfilter/avfilter.h>
-#include <libavutil/avutil.h>
-#include <libswresample/swresample.h>
-#include <libswscale/swscale.h>
-}
 #include <QMainWindow>
 #include <QFile>
 #include <QFileDialog>
@@ -17,6 +8,8 @@ extern "C" {
 #include <QDir>
 #include <QTimer>
 #include <QDebug>
+#include <QTextCodec>
+#include "audio.h"
 
 namespace Ui {
 class MainWindow;
@@ -32,7 +25,12 @@ public:
     QString fileName;
 private slots:
     void on_actionOpen_O_triggered();
-
+    void on_pushButtonPlay_clicked();
+    void on_pushButtonRecord_clicked();
+    void on_pushButtonStop_clicked();
+    void on_pushButtonRcon_clicked();
+public:
+    Audio *player;
 private:
     Ui::MainWindow *ui;
 };
