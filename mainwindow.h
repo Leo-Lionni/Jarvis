@@ -9,6 +9,8 @@
 #include <QTimer>
 #include <QDebug>
 #include <QTextCodec>
+#include <QAudio>
+#include <QAudioDeviceInfo>
 #include "audio.h"
 
 namespace Ui {
@@ -21,6 +23,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QStringList getOutputDevice();
     ~MainWindow();
     QString fileName;
 private slots:

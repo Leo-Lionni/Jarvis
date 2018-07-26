@@ -2,22 +2,21 @@
 
 Audio::Audio(QString filename)
 {
-//    if(filename.isEmpty()) filename="Test";
-//    if(!isValuable()){
-//        qDebug()<<"Library is not avaliable";
-//        return;
-//    }
-//    this->filename=filename;
-//    file.setFileName(this->filename);
-//    getOutputDevice();
-    avcodec_register_all();
-    unsigned version = avcodec_version();
-    qDebug()<<version;
+    if(filename.isEmpty()) filename="Test";
+    if(!isValuable()){
+        qDebug()<<"Library is not avaliable";
+        return;
+    }
+    this->filename=filename;
+    file.setFileName(this->filename);
 }
 
 bool Audio::isValuable()
 {
-
+    unsigned version = avcodec_version();
+    qDebug()<<version;
+    if(version) return true;
+    else return false;
 }
 /*   * 最简单的基于FFmpeg的音频解码器
      * Simplest FFmpeg Audio Decoder
@@ -84,8 +83,7 @@ bool Audio::decoder(QString input,QString output)
    int out_sample_rate=44100;
    int out_channels=av_get_channel_layout_nb_channels(out_channel_layout);
    //Out Buffer Size
-   int out_buffer_size=av_samples_get_buffer_size(NULL,out_channels
-                                                  ,out_nb_samples,out_sample_fmt, 1);
+   int out_buffer_size=av_samples_get_buffer_size(NULL,out_channels,out_nb_samples,out_sample_fmt, 1);
    out_buffer=(uint8_t *)av_malloc(MAX_AUDIO_FRAME_SIZE*2);
    pFrame=av_frame_alloc();
    //FIX:Some Codec's Context Information is missing
@@ -124,24 +122,7 @@ bool Audio::decoder(QString input,QString output)
    return 0;
 }
 
-QStringList Audio::getOutputDevice()
-{//获取音频设备名称
-    QStringList aDeviceListO;
-    QList<QAudioDeviceInfo> audioDeviceListI =
-            QAudioDeviceInfo::availableDevices(QAudio::AudioOutput);
-    foreach (QAudioDeviceInfo devInfo, audioDeviceListI){
-        QString strName = devInfo.deviceName();
-        if (devInfo.isNull()) continue;
-        if (strName[0] == 65533) continue;
-        bool bFound = false;
-        foreach (QString dev, aDeviceListO){
-            if (strName == dev){
-                bFound = true;
-            }
-        }
-        if (bFound == true) continue;
-        aDeviceListO.push_back(strName);
-        qDebug()<<strName;
-    }
-    return aDeviceListO;
+void Audio::run()
+{
+    qDebug()<<"run it";
 }

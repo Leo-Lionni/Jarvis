@@ -40,12 +40,11 @@ public:
     bool getFrame(QString filename);
     bool decoder(QString input,QString output);
     bool encoder(QString input,QString output);
-    QStringList           getOutputDevice();
     QString                filename;
     QFile                    file;
     AVOutputFormat   *ofmt;
     AVFormatContext	*pFormatCtx;
-    int				            i, audioStream;
+    unsigned int          i, audioStream;
     AVCodecContext    *pCodecCtx;
     AVCodec			    *pCodec;
     AVPacket		        *packet;
@@ -56,6 +55,7 @@ public:
     int                         index = 0;
     int64_t                   in_channel_layout;
     struct SwrContext   *au_convert_ctx;
+    void run();
 };
 
 #endif // AUDIO_H

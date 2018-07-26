@@ -200,7 +200,7 @@
 /* #undef WORDS_BIGENDIAN */
 
 /* gPhoto2 library */
-/* #undef HAVE_GPHOTO2 */
+#define HAVE_GPHOTO2
 
 /* VA library (libva) */
 /* #undef HAVE_VA */
