@@ -10,7 +10,12 @@
 #include <QDebug>
 #include <QTextCodec>
 #include <QAudio>
+#include <QAudioFormat>
+#include <QAudioOutput>
 #include <QAudioDeviceInfo>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QSoundEffect>
 #include "audio.h"
 
 namespace Ui {
@@ -36,6 +41,7 @@ public:
     Audio *player;
 private:
     Ui::MainWindow *ui;
+    QAudioOutput *audio;
 };
 
 #endif // MAINWINDOW_H

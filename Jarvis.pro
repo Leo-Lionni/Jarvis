@@ -20,6 +20,11 @@ LIBS += -L$$PWD/lib/armadillo/ \
 TARGET = Jarvis
 TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
+DESTDIR = bin
+OBJECTS_DIR = tmp/obj
+MOC_DIR = tmp/moc
+UI_DIR = tmp/ui
+RCC_DIR = tmp/rcc
 
 SOURCES += \
         main.cpp \

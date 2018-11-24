@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     fileName.clear();
+    QAudioDeviceInfo a;
+    qDebug()<<a.supportedCodecs();
 }
 
 QStringList MainWindow::getOutputDevice()
@@ -33,6 +35,7 @@ QStringList MainWindow::getOutputDevice()
 
 MainWindow::~MainWindow()
 {
+    delete player;
     delete ui;
 }
 
@@ -47,17 +50,10 @@ void MainWindow::on_actionOpen_O_triggered()
 void MainWindow::on_pushButtonPlay_clicked()
 {
     qDebug()<<"play button clicked";
-    if(fileName.isNull()) qDebug()<<"I have nothing to play\n"
-                                    "please choose a playable file";
-    player = new Audio(fileName);
-    QThread *playThread = new QThread;
-    player->moveToThread(playThread);
-    player->run();
-    qDebug()<<playThread->currentThreadId();
-    qDebug()<<qApp->applicationPid();
-    playThread->exit(0);
-    delete player;
-    delete playThread;
+    if(fileName.isNull())
+        qDebug()<<"Have nothing to play\nplease choose a playable file";
+    QSoundEffect *login=new QSoundEffect(this);
+    login->setSource(QUrl::fromLocalFile(fileName));  //主机上线音效
 }
 
 void MainWindow::on_pushButtonRecord_clicked()

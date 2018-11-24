@@ -2,7 +2,8 @@
  * Copyright (C) 2011 ~ 2018 Deepin, Inc.
  *               2011 ~ 2018 Wang Yong
  * Author:     Wang Yong <wangyong@deepin.com>
- * Maintainer: Wang Yong <wangyong@deepin.com>*/ 
+ * Maintainer: Wang Yong <wangyong@deepin.com>
+ */
 
 #include <QDateTime>
 #include <QDebug>

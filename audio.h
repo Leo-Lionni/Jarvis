@@ -12,7 +12,7 @@
 #include <QDebug>
 #include <QThread>
 #include <QIODevice>
-#include <QObject>
+#include <QApplication>
 
 #define __STDC_CONSTANT_MACROS
 extern "C" {

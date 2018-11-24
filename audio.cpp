@@ -28,8 +28,9 @@ bool Audio::isValuable()
 bool Audio::decoder(QString input,QString output)
 {
    //FILE *pFile=fopen("output.pcm", "wb");
-    QFile outputFile(output);
-   QDataStream writeOut(&outputFile);
+   QFile outputFile(output);
+   outputFile.open(QIODevice::Append|QIODevice::WriteOnly);
+   QTextStream a(&outputFile);
    // char url[]="skycity1.mp3";
    const int count=input.count();
    char url[count];
@@ -106,7 +107,7 @@ bool Audio::decoder(QString input,QString output)
                qDebug("index:%5d\t pts:%lld\t packet size:%d\n",index,packet->pts,packet->size);
                //Write PCM
                //fwrite(out_buffer, 1, out_buffer_size, pFile);
-               //writeOut.writeBytes();
+               a<<out_buffer;
                index++;
            }
        }
@@ -125,4 +126,6 @@ bool Audio::decoder(QString input,QString output)
 void Audio::run()
 {
     qDebug()<<"run it";
+    decoder(filename,qApp->applicationDirPath()+QDir::separator()+"a.pcm");
+    qDebug()<<"Done";
 }
