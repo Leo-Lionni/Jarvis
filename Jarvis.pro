@@ -12,7 +12,7 @@ LIBS += -L$$PWD/lib/armadillo/ \
 -L$$PWD/lib/SDL/lib \
 -L$$PWD/lib/x264/lib \
 -larmadillo \
--lopencv_core -lopencv_highgui -lopencv_video -lopencv_dnn \
+-lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_dnn \
 -lSDL2 -lx264 \
 -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lpostproc \
 -lswscale -lswresample
