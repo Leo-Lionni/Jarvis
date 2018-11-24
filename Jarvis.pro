@@ -1,17 +1,16 @@
 QT                  += core gui widgets multimedia
 INCLUDEPATH += \
-$$PWD/armadillo/ \
-$$PWD/FFmpeg/include/ \
-$$PWD/OpenCV/include/ \
-$$PWD/SDL/include/ \
-$$PWD/x264/include/
+$$PWD/lib/armadillo/ \
+$$PWD/lib/FFmpeg/include/ \
+$$PWD/lib/OpenCV/include/ \
+$$PWD/lib/SDL/include/ \
+$$PWD/lib/x264/include/
 unix{
-LIBS += -L$$PWD/armadillo/ \
--L$$PWD/engines/ \
--L$$PWD/FFmpeg/lib/ \
--L$$PWD/OpenCV/lib/ \
--L$$PWD/SDL/lib \
--L$$PWD/x264/lib \
+LIBS += -L$$PWD/lib/armadillo/ \
+-L$$PWD/lib/FFmpeg/lib/ \
+-L$$PWD/lib/OpenCV/lib/ \
+-L$$PWD/lib/SDL/lib \
+-L$$PWD/lib/x264/lib \
 -larmadillo \
 -lopencv_core -lopencv_highgui -lopencv_video -lopencv_dnn \
 -lSDL2 -lx264 \
@@ -25,9 +24,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+    video.cpp \
+    audio.cpp \
+    waveform.cpp \
+    record.cpp
 
 HEADERS += \
         mainwindow.h \
+    record.h \
+    audio.h \
+    video.h \
+    waveform.h
 
 FORMS += \
         mainwindow.ui
